@@ -11,6 +11,32 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ @charset "utf-8";
+
+.menu {
+    position: relative;
+    color: #5f6368;
+    border: solid 1px #dadce0;
+    border-radius: 1vw;
+    display: inline-block;
+    padding: 6px 8px 6px 8px;
+    /*padding: top right bottom left*/
+    cursor: pointer;
+    text-align: center;
+}
+
+.clicked_menu {
+    color: white;
+    border-color: #4285f4;
+    color: #4285f4;
+    background: #e9f1fe;
+}
+
+
+.signupform{
+    vertical-align: center;
+}
+
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -100,30 +126,6 @@ hr {
 
 hr:not([size]) {
     height: 1px;
-}
-
-h6,
-.h6,
-h5,
-.h5,
-h4,
-.h4,
-h3,
-.h3,
-h2,
-.h2,
-h1,
-.h1 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-h1,
-.h1 {
-    font-size: calc(1.375rem + 1.5vw);
 }
 
 @media (min-width: 1200px) {
@@ -273,7 +275,7 @@ a {
 }
 
 a:hover {
-    color: #cca000;
+    color: #4461F2;
 }
 
 a:not([href]):not([class]),
@@ -3274,8 +3276,8 @@ fieldset:disabled .btn {
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #d9aa00;
-    border-color: #cca000;
+    background-color: #4461F2;
+    border-color: #4461F2;
 }
 
 .btn-check:focus+.btn-primary,
@@ -3454,8 +3456,8 @@ fieldset:disabled .btn {
 
 .btn-warning:hover {
     color: #fff;
-    background-color: #d9aa00;
-    border-color: #cca000;
+    background-color: #4461F2;
+    border-color: #4461F2;
 }
 
 .btn-check:focus+.btn-warning,
@@ -3633,8 +3635,8 @@ fieldset:disabled .btn {
 
 .btn-outline-primary:hover {
     color: #fff;
-    background-color: #ffc800;
-    border-color: #ffc800;
+    background-color: #4461F2;
+    border-color: #4461F2;
 }
 
 .btn-check:focus+.btn-outline-primary,
@@ -4491,7 +4493,7 @@ fieldset:disabled .btn {
 .nav-link {
     display: block;
     padding: 0.5rem 1rem;
-    color: #ffc800;
+    color: #4461F2;
     text-decoration: none;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
@@ -4504,7 +4506,7 @@ fieldset:disabled .btn {
 
 .nav-link:hover,
 .nav-link:focus {
-    color: #cca000;
+    color: #4461F2;
 }
 
 .nav-link.disabled {
@@ -4539,7 +4541,7 @@ fieldset:disabled .btn {
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-    color: #495057;
+    color: black;
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff;
 }
@@ -4558,8 +4560,8 @@ fieldset:disabled .btn {
 
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
-    color: #fff;
-    background-color: #ffc800;
+    color:black;
+    background-color: #4461F2;
 }
 
 .nav-fill>.nav-link,
@@ -5118,6 +5120,7 @@ fieldset:disabled .btn {
 }
 
 .navbar-dark .navbar-brand {
+    
     color: #fff;
 }
 
@@ -12323,7 +12326,7 @@ p {
 #mainNav .navbar-nav .nav-item .nav-link {
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 0.95rem;
-    color: white;
+    color: black;
     letter-spacing: 0.0625em;
 }
 
