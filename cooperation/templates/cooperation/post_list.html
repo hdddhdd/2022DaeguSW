@@ -1,90 +1,99 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <title>Cooperation</title>
-        
-        <link rel="stylesheet" href="../../static/styles.css">
-        <script src="../../static/styles.js"></script>
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-        <script src='http://code.jquery.com/jquery-3.3.1.js'></script>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-        <link href="../../static/style.css" rel="stylesheet" />
-    </head>
 
-    <body>
-        <h1>Cooperation</h1>
- <!-- Navigation-->
- {% include 'user/navbar.html' %}
-        <!-- 기업 이름 검색 -->
-        <div class="input-group" style="margin-top: 300px;">
-            <input type="text" class="form-control1" placeholder="검색할 기업의 이름을 입력해주세요" id="search-company">
-            <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button" onclick="searchCompany();"></button>
-            </span>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <title>Cooperation</title>
 
-        {% for p in post_list %}
-        <div class="cards">
-            <div class="card">
-                <!-- 기업을 대표하는 이미지 -->
-                <div class="card__image-holder">
-                    {% if p.companyImage %}
-                        <img class="card-img-top" src="{{ p.companyImage.url }}" width="300px" alt="{{ p }} head image">
-                    {% else %}
-                        <img class="card-img-top" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image">
-                    {% endif %}
+    <!-- Favicon-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <script src='http://code.jquery.com/jquery-3.3.1.js'></script>
+    <link href="../../static/style.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Cooperation</h1>
+    <!-- Navigation-->
+    {% include 'user/navbar.html' %}
+    <!-- 기업 이름 검색 -->
+    <div class="input-group" style="margin-top: 300px;">
+        <input type="text" class="form-control1" placeholder="검색할 기업의 이름을 입력해주세요" id="search-company">
+        <span class="input-group-btn">
+            <button class="btn btn-secondary" type="button" onclick="searchCompany();"></button>
+        </span>
+    </div>
+
+    {% for p in post_list %}
+    <div class="cards">
+        <div class="card">
+            <!-- 기업을 대표하는 이미지 -->
+            <div class="card__image-holder">
+                {% if p.companyImage %}
+                <img class="card-img-top" src="{{ p.companyImage.url }}" style="width: 100px;" alt="{{ p }} head image">
+                {% else %}
+                <img class="card-img-top" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image">
+                {% endif %}
+            </div>
+
+            <!-- 기업 이름 및 간단 소개 -->
+            <div class="card-title">
+                <h2>
+                    {{ p.companyName }}<br>
+                    <small>
+                        {% if p.companyHook %}
+                        {{ p.companyHook }}
+                        {% endif %}
+                        <br> 지역 {{ p.companyLocationCategory }}
+                    </small>
+                </h2>
+            </div>
+
+            <!-- 기업 정보 간략하게 -->
+            <div class="card-flap flap1">
+                <div class="card-description">
+                    {{ p.companyInform }}
+                    <br>
+                    <a href="{{ p.companyDomain }}">{{ p.companyDomain }}</a>
                 </div>
-        
-                <!-- 기업 이름 및 간단 소개 -->
-                <div class="card-title">
-                    <h2>
-                        {{ p.companyName }}<br>
-                        <small>
-                            {% if p.companyHook %}
-                                {{ p.companyHook }}
-                            {% endif %}
-                            <br> 지역  {{ p.companyLocationCategory }}
-                        </small>
-                    </h2>
-                </div>
-        
-                <!-- 기업 정보 간략하게 -->
-                <div class="card-flap flap1">
-                    <div class="card-description">
-                        {{ p.companyInform }}
-                        <br>
-                        <a href="{{ p.companyDomain }}">{{ p.companyDomain }}</a>
-                    </div>
-                    <div class="card-flap flap2">
-                        <div class="card-actions">
-                            <a href="{{ p.get_absolute_url }}" class="btn">{{ p.companyName }}</a>
-                        </div>
+                <div class="card-flap flap2">
+                    <div class="card-actions">
+                        <a href="{{ p.get_absolute_url }}" class="btn">{{ p.companyName }}</a>
                     </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
+    </div>
+    {% endfor %}
 
-        <script>
-            function searchCompany() {
-                let searchValue = document.getElementById('search-company').value.trim();
-                if (searchValue.length > 1){
-                    location.href = searchValue + "/";
-                }
-                else {
-                    alert('검색어(' + searchValue +')가 너무 짧습니다.');
-                }
-            };
+    <script>
+        function searchCompany() {
+            let searchValue = document.getElementById('search-company').value.trim();
+            if (searchValue.length > 1) {
+                location.href = searchValue + "/";
+            }
+            else {
+                alert('검색어(' + searchValue + ')가 너무 짧습니다.');
+            }
+        };
 
-            document.getElementById('search-company').addEventListener('keyup', function(event)
-            {
-                if(event.key === 'Enter'){
-                    searchPost();
-                }
-            });
-        </script>
+        document.getElementById('search-company').addEventListener('keyup', function (event) {
+            if (event.key === 'Enter') {
+                searchPost();
+            }
+        });
+    </script>
 
-    </body>
-</html>  
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+</body>
+
+</html>
