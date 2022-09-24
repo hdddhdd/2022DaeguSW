@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cooperation</title>
+        
+        <link rel="stylesheet" href="../../static/styles.css">
+        <script src="../../static/styles.js"></script>
+    </head>
+
+    <body>
+        <h1>Cooperation</h1>
+
+        <!-- 기업 이름 검색 -->
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="검색할 기업의 이름을 입력해주세요" id="search-company">
+            <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button" onclick="searchCompany();"></button>
+            </span>
+        </div>
+
+        {% for p in post_list %}
+        <div class="cards">
+            <div class="card">
+                <!-- 기업을 대표하는 이미지 -->
+                <div class="card__image-holder">
+                    {% if p.companyImage %}
+                        <img class="card-img-top" src="{{ p.companyImage.url }}" width="300px" alt="{{ p }} head image">
+                    {% else %}
+                        <img class="card-img-top" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image">
+                    {% endif %}
+                </div>
+        
+                <!-- 기업 이름 및 간단 소개 -->
+                <div class="card-title">
+                    <h2>
+                        {{ p.companyName }}<br>
+                        <small>
+                            {% if p.companyHook %}
+                                {{ p.companyHook }}
+                            {% endif %}
+                            <br> 지역  {{ p.companyLocationCategory }}
+                        </small>
+                    </h2>
+                </div>
+        
+                <!-- 기업 정보 간략하게 -->
+                <div class="card-flap flap1">
+                    <div class="card-description">
+                        {{ p.companyInform }}
+                        <br>
+                        <a href="{{ p.companyDomain }}">{{ p.companyDomain }}</a>
+                    </div>
+                    <div class="card-flap flap2">
+                        <div class="card-actions">
+                            <a href="{{ p.get_absolute_url }}" class="btn">{{ p.companyName }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        <script>
+            function searchCompany() {
+                let searchValue = document.getElementById('search-company').value.trim();
+                if (searchValue.length > 1){
+                    location.href = searchValue + "/";
+                }
+                else {
+                    alert('검색어(' + searchValue +')가 너무 짧습니다.');
+                }
+            };
+
+            document.getElementById('search-company').addEventListener('keyup', function(event)
+            {
+                if(event.key === 'Enter'){
+                    searchPost();
+                }
+            });
+        </script>
+
+    </body>
+</html>  

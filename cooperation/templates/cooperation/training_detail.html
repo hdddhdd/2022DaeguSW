@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>훈련 컨텐츠 세부페이지</title>
+    </head>
+
+    <body>
+        <h1>Training</h1>
+        <hr/>
+        {% if training.trainingImage %}
+            <img class="img-fluid rounded" src="{{ post.trainingImage.url }}" alt="{{ post.trainingTitle }} trainingImage">
+        {% else %}
+            <img class="img-fluid rounded" src="https://picsum.photos/seed/{{ post.id }}/800/200" alt="random_image">
+        {% endif %}
+        <h2>{{ training.trainingTitle }}</h2>
+        <h4>{{ training.trainingType }}</h4>
+        <h4>{{ training.trainingCategory }}</h4>
+        <h4>{{ training.trainingContents }}</h4>
+
+        {% if training.file_upload %}
+            <a href="{{ post.trainingFile }}" class="btn btn-outline-dark" role="button" dwonlad>Download</a>
+        {% endif %}
+
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Training</title>
+    </head>
+
+    <body>
+        {% for p in training_list %}
+        <hr/>
+            {% if p.trainingImage %}
+                <img class="card-img-top" src="{{ p.trainingImage.url }}" alt="{{ p }} head image">
+            {% else %}
+                <img class="card-img-top" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image">
+            {% endif %}
+        <h2><a href="{{ p.get_absolute_url }}">{{ p.trainingTitle }}</a></h2>
+        {% if p.trainingType %}
+            <h4 class="text-muted">{{ p.trainingType }}</h4>
+        {% endif %}
+        {% if p.trainingCategory %}
+            <h4 class="text-muted">{{ p.trainingCategory }}</h4>
+        {% endif %}
+
+        {% endfor %}
+
+    </body>
+</html>
