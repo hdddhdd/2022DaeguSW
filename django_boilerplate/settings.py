@@ -33,7 +33,6 @@ INSTALLED_APPS = [
 
     'django.contrib.sites',
 
-    'core',
     'cooperation',
     'user',
     'resume',

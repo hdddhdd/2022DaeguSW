@@ -6,14 +6,20 @@
         
         <link rel="stylesheet" href="../../static/styles.css">
         <script src="../../static/styles.js"></script>
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script src='http://code.jquery.com/jquery-3.3.1.js'></script>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <link href="../../static/style.css" rel="stylesheet" />
     </head>
 
     <body>
         <h1>Cooperation</h1>
-
+ <!-- Navigation-->
+ {% include 'user/navbar.html' %}
         <!-- 기업 이름 검색 -->
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="검색할 기업의 이름을 입력해주세요" id="search-company">
+        <div class="input-group" style="margin-top: 300px;">
+            <input type="text" class="form-control1" placeholder="검색할 기업의 이름을 입력해주세요" id="search-company">
             <span class="input-group-btn">
                 <button class="btn btn-secondary" type="button" onclick="searchCompany();"></button>
             </span>
