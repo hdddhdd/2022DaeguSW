@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>이력서 상세 보기</title>
+        {% if user.is_authenticated and user == resume.author %}
+            <a class="btn btn-info btn-sm float-right" href="/myresume/update/{{ resume.pk }}" role="button"><i class="fas fa-pen"></i>Edit Post</a>
+        {% endif %}
+
+    </head>
+
+    <body>
+        <h1>{{ resume.user_name }}</h1>
+        <hr/>
+        {% if resume.user_img %}
+            <img class="img-fluid rounded" src="{{ resume.user_img.url }}" alt="{{ resume.user_name }} user_img">
+        {% else %}
+            <img class="img-fluid rounded" src="https://picsum.photos/seed/{{ post.id }}/800/200" alt="random_image">
+        {% endif %}
+        <h4>{{ resume.user_phonenum }}</h4>
+        <h4>{{ resume.user_gender }}</h4>
+        <h4>{{ resume.user_address }}</h4>
+        <h4>{{ resume.user_disability }}</h4>
+
+    </body>
+</html>

@@ -22,8 +22,12 @@
     <div style="margin-top: 200px;">
         {% for resume in resumes %}
         <h1>{{resume.user_name}}</h1>
-        <!--여기부터수정-->
         <img src="{{resume.user_img.url}}">
+        <p>{{resume.user_phonenum}}</p>
+        <p>{{resume.user_gender}}</p>
+        <p>{{resume.user_address}}</p>
+        <p>{{resume.user_disability}}</p>
+        <p>{{user_career}}</p>
     </div>
     {% endfor %}
 </body>
