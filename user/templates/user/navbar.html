@@ -57,7 +57,7 @@ a {
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-
+                <div style="margin: auto; padding-right: 50px;">
                 {% if user.is_authenticated %}
                 <a href="/mypage">{{user.username}}</a>님, 환영합니다!
                 <a href="/accounts/logout">로그아웃</a>
@@ -65,9 +65,9 @@ a {
                 <a href="/login">로그인</a>
               
                 {% endif %}
+            </div>
 
-
-                <li class="nav-item"><a class="nav-link" href="#">함께하는 기업</a></li>
+                <li class="nav-item"><a class="nav-link" href="/cooperation/">함께하는 기업</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">일자리 모아보기</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">재미있는 직업 체험</a></li>
                 <li class="nav-item"><a class="nav-link" href="/resume">이력서 도우미</a></li>

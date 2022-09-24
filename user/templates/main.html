@@ -8,21 +8,20 @@
     <meta name="author" content="" />
 
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-
-    <link href="../static/styles.css" rel="stylesheet" />
+    <script src='http://code.jquery.com/jquery-3.3.1.js'></script>
+    <link href="../../static/style.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
 </head>
 
 <body id="page-top">
     <div style="background-color: white">
 
-       {% load socialaccount %}
        <!-- Navigation-->
        {% include 'user/navbar.html' %}
 
@@ -172,7 +171,7 @@
         </section>
 
         <!-- Team-->
-        <section class="page-section bg-light" id="team">
+        <section class="page-section" id="team">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Team 초코송이</h2>
@@ -203,7 +202,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="../static/img/heejung_prof.png" alt="..." />
+                            <img class="mx-auto rounded-circle" src="../static/img/songeun_prof.png" alt="..." />
                             <h4>홍송은</h4>
                             <p class="text-muted">Data Crawling</p>
                             <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/yellow._.hong/"
@@ -472,6 +471,7 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </div>
+    
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 

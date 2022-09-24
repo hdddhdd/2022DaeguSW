@@ -33,14 +33,12 @@ INSTALLED_APPS = [
 
     'django.contrib.sites',
 
-    'core',
     'cooperation',
     'user',
     'resume',
 
 
-    'zblog',
-    'zsingle_pages',
+   
 ]
 
 AUTHENTICATION_BACKENDS = (

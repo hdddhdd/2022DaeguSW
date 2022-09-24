@@ -1,7 +1,11 @@
+from multiprocessing import context
 from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect
 from resume.models import Resume
 from . import models
+
+def mypage(request):
+    return render(request, 'mypage.html')
 
 def resume(request):
     if request.method == 'GET':
@@ -34,4 +38,8 @@ def resume(request):
     return render(request, 'main.html')
 
         
+def myresume(request):
     
+    resumes = Resume.objects.all()
+    context = {'resumes':resumes}
+    return render(request, 'myresume.html', context)
