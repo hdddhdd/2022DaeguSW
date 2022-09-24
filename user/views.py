@@ -66,6 +66,17 @@ def login_view(request):
 def main(request):
     return render(request, 'main.html')
 
+def mypage(request):
+    return render(request, 'mypage.html')
+
+
+
+def accounts(request):
+    return render(request, 'accounts.html')
+
+def help(request):
+    return render(request, 'help.html')
+
 
 def logout_view(request):
     auth.logout(request)

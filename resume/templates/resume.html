@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>이력서 가이드라인</title>
+
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <script src='http://code.jquery.com/jquery-3.3.1.js'></script>
+    <link href="../../static/styles.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+</head>
+
+<body id="page-top">
+    <div style="background-color:white;">
+        <!-- Navigation-->
+        {% include 'user/navbar.html' %}
+
+
+        {% block content %}
+
+        <style>
+            #container {
+                display: flex;
+            }
+
+            #box-left {
+                flex-basis: 700px;
+                background: linear-gradient(rgb(255, 242, 179), white);
+                /* background-color: #ffaa00; */
+                padding: 100px;
+                border-top: 200px;
+                margin-right: 100px;
+            }
+
+            #box-center {
+                flex: 1;
+                text-align: center;
+                /* background-color: #ffaa00; */
+            }
+
+            #box-right {
+                flex-basis: 200px;
+                text-align: right;
+            }
+        </style>
+        <div id='container'>
+            <div id='box-left'>
+                <br><br>
+                <h3>이력서 작성 Tip 추가하기</h3>
+                <!-- <div>
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../../static/img/work.png" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>First slide label</h5>
+                                    <p>Some representative placeholder content for the first slide.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../../static/img/work.png" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Second slide label</h5>
+                                    <p>Some representative placeholder content for the second slide.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../../static/img/work.png" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Third slide label</h5>
+                                    <p>Some representative placeholder content for the third slide.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div> -->
+            </div>
+            <div id='box-center'>
+                <!--이력서 폼-->
+                <div class="signupform" style="margin-right: 100px;">
+                    <h1>이력서 작성하기</h1>
+                    <form method="POST" action="{%url 'resume' %}">
+                        {% csrf_token %}
+                        <!--아이디는 이력서에 작성할 필요 없으니까! 
+                            <label for="id">아이디</label>
+                        <input type="text" class="form-control" placeholder="아이디" id="id" name="id">
+                        <br> -->
+
+                        <label for="user_img">프로필 이미지</label> <br>
+                        <input type="file" id="user_img" name="프로필 이미지">
+                        <br>
+                        {% csrf_token %}
+
+                        <br>
+
+                        <label for="user_name">이름</label>
+                        <input type="text" class="form-control" placeholder="이름" id="user_name" name="user_name">
+                        <br>
+
+                        <label for="user_phonenum">전화번호</label>
+                        <input type="text" class="form-control" placeholder="전화번호" id="user_phonenum"
+                            name="user_phonenum">
+                        <br>
+
+                        <label for="user_gender">성별</label>
+                        <select name="user_gender" id="user_gender">
+                            <option value="none">=== 선택 ===</option>
+                            <option value="male">남성</option>
+                            <option value="female">여성</option>
+                        </select>
+
+                        <br><br>
+                        <label for="user_address">주소</label>
+                        <input type="text" class="form-control" placeholder="주소" id="user_address" name="user_address">
+                        <br>
+
+                        <label for="disability">장애 종류</label>
+                        <select name="disability" id="disability">
+                            <option value="none">=== 선택 ===</option>
+                            <option value="지체장애">지체장애</option>
+                            <option value="뇌병변장애">뇌병변장애</option>
+                            <option value="시각장애">시각장애</option>
+                            <option value="청각장애">청각장애</option>
+                            <option value="언어장애">언어장애</option>
+                            <option value="안면장애">안면장애</option>
+                            <option value="신장장애">신장장애</option>
+                            <option value="심장장애">심장장애</option>
+                            <option value="간장애">간장애</option>
+                            <option value="호흡기장애">호흡기장애</option>
+                            <option value="장루/요루장애">장루/요루장애</option>
+                            <option value="뇌전증장애">뇌전증장애</option>
+                            <option value="지적장애">지적장애</option>
+                            <option value="자폐성장애">자폐성장애</option>
+                            <option value="정신장애">정신장애</option>
+                        </select>
+
+                        <br><br>
+
+                        <label for="user_career">경력</label>
+
+                        <input type="text" class="form-control" placeholder="경력 및 경험" id="user_career"
+                            name="user_career" style="height: 200px;">
+                        <br>
+                        <button class="button" type="submit" style="font-size: 15px;">이력서 저장하기</button>
+                        <br><br>
+                    </form>
+
+                </div>
+            </div>
+            <div id='box-right'>오른쪽</div>
+        </div>
+
+
+
+        {% endblock %}
+
+
+    </div>
+
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
