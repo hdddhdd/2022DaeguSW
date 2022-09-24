@@ -20,7 +20,7 @@ body {
 
 .input-group {
     position: absolute;
-    
+
 
 }
 
@@ -185,7 +185,7 @@ div.card.show {
 
     div.card-title {
         a.toggle-info {
-            background: #ff6666  !important;
+            background: #ff6666 !important;
 
             span {
                 top: 15px;

@@ -35,7 +35,6 @@ urlpatterns = [
 
     path('accounts/' ,include('allauth.urls')),
 
-    path('', include('zblog.urls')),
 
 ]
 

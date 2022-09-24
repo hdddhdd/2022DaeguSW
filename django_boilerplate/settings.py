@@ -39,8 +39,7 @@ INSTALLED_APPS = [
     'resume',
 
 
-    'zblog',
-    'zsingle_pages',
+   
 ]
 
 AUTHENTICATION_BACKENDS = (
