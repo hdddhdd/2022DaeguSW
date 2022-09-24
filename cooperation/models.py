@@ -40,7 +40,7 @@ class Post(models.Model):
     companyLocationCategory = models.ForeignKey(PostLocationCategory, null=True, blank=True, on_delete=models.SET_NULL) # 기업 위치
 
     companyNumber = models.CharField(max_length=13, blank=True) # 기업 전화번호
-    companyInform = models.CharField(max_length = 50) # 기업 소개
+    companyInform = models.CharField(max_length = 54) # 기업 소개
     companyDomain = models.URLField() # 기업 도메인 주소
 
     def __str__(self):  # 기업 이름, pk 보여주기
