@@ -1,43 +1,108 @@
-// 산학 연계 직업 훈련 페이지 - 기관 목록
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900);
+/*--------------------
+Body
+--------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-@white: #ffffff;
-@lightBG: #dce1df;
-@salmon: #ff6666;
-
-@teal: #0096a0;
-@tealMid: #0ebac7;
-@tealContrast: #33ffff;
-@tealShade: #007c85;
-
-@darkGrey: #4f585e;
-
+$color: #e24040;
 
 body {
-    // background: #dce1df;
-    color: #4f585e;
-    font-family: 'Source Sans Pro', sans-serif;
-    text-rendering: optimizeLegibility;
+  height: 100vh;
+  margin: 0;  
+  background: #DEDEDE;
+  color: #5a6674;
+  font-size: 13px;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
 }
 
 .gap-box {
-  background: #dce1df;
   height: 3000px;
+  background: #dce1df;
 }
+
+// 산학 연계 직업 훈련 - 검색
+
+.search-form:focus {
+    outline: none;
+    border-color: #e7e600;
+    box-shadow: 0 0 10px #e7e600;
+}
+
+.search-form {
+  width: 60%;
+  height: 60px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  border-radius: 40px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translate(-50%, -50%);
+  background: #fff;
+  transition: all 0.3s ease;
+
+  &.focus {
+    border-color: #e7e600;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.search-input {
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  top: 25%;
+  left: 38px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px;
+  font-align: center;
+  background: none;
+  color: #5a6674;
+  border: none;
+  appearance: none;
+  outline: none;
+}
+
+.search-button {
+  width: 13%;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+
+  position: absolute;
+  top: 4.5px;
+  left: 85%;
+
+  border-radius: 40px;
+  border: none;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+
+  background-color: #ffaa00;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+// 산학 연계 직업 훈련 - 리스트
 
 .input-group {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 50%);
+
 }
 
 a.btn {
+    display: inline-block;
     background: #0096a0;
     border-radius: 4px;
     box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.25);
     color: #ffffff;
-    display: inline-block;
     padding: 6px 30px 8px;
     position: relative;
     text-decoration: none;
@@ -58,59 +123,66 @@ a.btn:active {
     transform: translate3d(0, 1px, 0);
     transition: all 0.025s 0s ease-out;
 }
-
+/* 
 div.cards {
     display: grid;
-    margin: 10px;
-    max-width: 50px;
+    max-width: 80%;
+    height: 500px;
     text-align: center;
+    justify-content: space-between;
 }
 
 div.card {
-    background: #ffffff;
-    display: inline-block;
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    width: 300px;
     margin: 8px;
+    background: #ffffff;
     max-width: 300px;
     perspective: 1000;
     position: relative;
     text-align: left;
     transition: all 0.3s 0s ease-in;
-    width: 300px;
-    z-index: 1;
+    border:solid 5px;
+    border-width: thick;
+    border-color: #000000;
 
     img {
-        max-width: 500px;
+        max-width: 300px;
     }
 
     .card__image-holder {
-        background: rgba(0, 0, 0, 0.1);
         height: 0;
-        padding-bottom: 75%;
+        background: rgba(0, 0, 0, 0.1);
+        
     }
 
     div.card-title {
+       
         background: #ffffff;
         padding: 6px 15px 10px;
         position: relative;
-        z-index: 0;
 
         a.toggle-info {
-            border-radius: 32px;
+            width: 32px;
             height: 32px;
+            border-radius: 32px;
             padding: 0;
             position: absolute;
             right: 15px;
             top: 10px;
-            width: 32px;
 
             span {
-                background: #ffffff;
                 display: block;
+                width: 12px;
                 height: 2px;
+                background: #ffffff;
                 position: absolute;
                 top: 16px;
                 transition: all 0.15s 0s ease-out;
-                width: 12px;
             }
 
             span.left {
@@ -125,10 +197,10 @@ div.card {
         }
 
         h2 {
+            margin: 0;
             font-size: 24px;
             font-weight: 700;
             letter-spacing: -0.05em;
-            margin: 0;
             padding: 0;
 
             small {
@@ -153,21 +225,19 @@ div.card {
     }
 
     div.card-flap {
+        width: 100%;
         background: darken(#ffffff, 15);
         position: absolute;
-        width: 100%;
         transform-origin: top;
         transform: rotateX(-90deg);
     }
 
     div.flap1 {
         transition: all 0.3s 0.3s ease-out;
-        z-index: -1;
     }
 
     div.flap2 {
         transition: all 0.3s 0s ease-out;
-        z-index: -2;
     }
 
 }
@@ -193,7 +263,7 @@ div.card.show {
 
     div.card-title {
         a.toggle-info {
-            background: #ff6666 !important;
+            background: #ff6666  !important;
 
             span {
                 top: 15px;
@@ -221,4 +291,27 @@ div.card.show {
     div.flap2 {
         transition: all 0.3s 0.2s ease-out;
     }
+} */
+
+
+#fullscreen{
+	width: 100%;
+	height: 100%;
+	background-color: grey;
+}
+#screen1{
+	width:  100%;
+	/* height: 600px; */
+	/* background-color: black; */
+	float: left;
+}
+#screen1-1{
+	width:  100%;
+	height: 300px;
+	/* background-color: rgb(255, 0, 0); */
+}
+#screen1-2{
+	width:  100%;
+	height: 300px;
+	/* background-color: yellow; */
 }

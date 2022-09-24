@@ -1,27 +1,81 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <title>Training</title>
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>Training</title>
+    <link rel="stylesheet" href="../../static/training_list.css">
+    <script src="../../static/styles.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="../../static/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    {% include 'user/navbar.html' %}
+
+    <div style="margin-top:150px; padding: 30px; height:150px;background-color: #fff2d7; ">
+        <div style="text-align: center; vertical-align: middle;">
+            <h1 class="card-title"> 💕{{ companyName }}💕의 교육훈련 프로그램입니다.</h1>
+        </div>
+    
+
         {% for p in training_list %}
-        <hr/>
-            {% if p.trainingImage %}
-                <img class="card-img-top" src="{{ p.trainingImage.url }}" alt="{{ p }} head image">
-            {% else %}
-                <img class="card-img-top" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image">
-            {% endif %}
-        <h2><a href="{{ p.get_absolute_url }}">{{ p.trainingTitle }}</a></h2>
-        {% if p.trainingType %}
-            <h4 class="text-muted">{{ p.trainingType }}</h4>
-        {% endif %}
-        {% if p.trainingCategory %}
-            <h4 class="text-muted">{{ p.trainingCategory }}</h4>
-        {% endif %}
 
+        <ul class="cards" style="margin-top: 150px;display: inline-flex;">
+            <li>
+                <div class="card">
+                    {% if p.trainingImage %}
+                    <img class="card__image" width="250px" src="{{ p.trainingImage.url }}" alt="{{ p }} head image">
+                    {% else %}
+                    <img class="card__image" width="250px" src="https://picsum.photos/seed/{{ p.id }}/800/200"
+                        alt="random_image">
+                    {% endif %}
+
+                    <div class="card__overlay">
+                        <div class="card__header" style=" border-radius: 3px 3px 0 0;">
+
+                            <div class="card__header-text" style="height: 1px; align-items: center;">
+                                <div>
+                                    {% if p.trainingType %}
+                                    <h5>
+                                        {{ p.trainingTitle }}
+                                    </h5>
+
+                                    {% endif %}
+
+
+                                    {% if p.trainingType and p.trainingCategory%}
+                                    <p class="text-muted">{{ p.trainingType }}
+                                        | {{ p.trainingCategory }}
+                                    </p>
+
+                                    {% endif %}
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div style="text-align: center;">
+                            <br><br>
+                            <button class="btn " style="margin-bottom: 5px;border: 1px solid;">
+                                <a style="text-decoration: none; color: black;" href="{{ p.get_absolute_url }}">
+
+                                    {{p.trainingTitle }}</a>
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+        </ul>
         {% endfor %}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script>
 
-    </body>
+    </div>
+</body>
+
 </html>
