@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>로그인</title>
+
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <script src='http://code.jquery.com/jquery-3.3.1.js'></script>
+    <link href="../../static/styles.css" rel="stylesheet" />
+
+</head>
+
+<body id="page-top">
+
+
+    <!-- Navigation-->
+    {% include 'user/navbar.html' %}
+
+    <!--로그인 폼-->
+
+    {% block content %}
+
+    {% if user.is_authenticated %}
+    <div style="margin-top: 200px;">
+    <h1>로그인 완료</h1>
+    </div>
+    {% else %}
+
+
+
+    <div class="loginform">
+        <h1>로그인</h1>
+        <form method="post">
+            {% csrf_token %}
+            {% include './form_errors.html' %}
+            <div>
+                <label>사용자 ID</label>
+                <input type="text" class="form-control" placeholder="아이디" name="id" id="id">
+            </div>
+            <br>
+            <div>
+                <label>비밀번호</label>
+                <input type="text" class="form-control" placeholder="비밀번호" name="password" id="password">
+            </div>
+            <br> <br>
+            <div class="wrap">
+                <button class="button" type="submit" style="font-size: 15px;">로그인</button>
+            </div>
+        </form>
+        {% load socialaccount %}
+
+        <a class="custom-btn btn-1" href="{% provider_login_url 'google' %}">구글 계정 <br> 로그인</a>
+
+    </div>
+    {% endif %}
+    {% endblock %}
+
+
+
+    <!-- Footer 맨 밑으로 내려야 함-->
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    {% include 'user/footer.html' %}
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>
