@@ -1,0 +1,54 @@
+[33mcommit 31b7b56eae2fd74c5efef4757ebe41618f638ace[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: hdddhdd <nuly08@naver.com>
+Date:   Fri Sep 23 23:30:10 2022 +0900
+
+    clean css file
+
+[33mcommit 76f8eb2a753534c40785a3327e7e099b9dfe69da[m
+Author: hdddhdd <nuly08@naver.com>
+Date:   Fri Sep 23 23:28:17 2022 +0900
+
+    clean css file
+
+[33mcommit 11a13fe3ceb3ac213c6662a2e937cbaa03c41690[m
+Author: hdddhdd <nuly08@naver.com>
+Date:   Fri Sep 23 23:24:38 2022 +0900
+
+    login
+
+[33mcommit 56c38ce4edf87f6d3be9a5998563be5d831b4814[m
+Author: hdddhdd <nuly08@naver.com>
+Date:   Fri Sep 23 17:07:39 2022 +0900
+
+    register
+
+[33mcommit d9ff67da652b86c942c3cb2778881860e3986d57[m
+Merge: 568e082 e2b4f1c
+Author: hdddhdd <nuly08@naver.com>
+Date:   Fri Sep 23 02:11:17 2022 +0900
+
+    Merge branch 'main' of https://github.com/hdddhdd/2022DaeguSW
+
+[33mcommit 568e0824042155a88c42cf5a9d6670b16920ef64[m
+Author: hdddhdd <nuly08@naver.com>
+Date:   Fri Sep 23 02:10:25 2022 +0900
+
+    header and footer
+
+[33mcommit e2b4f1c4cd7c7536f0b90c248573ea11f72cc0b0[m
+Author: Heejung Choi <71762328+hdddhdd@users.noreply.github.com>
+Date:   Thu Sep 22 23:35:51 2022 +0900
+
+    Update README.md
+
+[33mcommit 8e4938016d73218ee9cbae8f3d3559195df64272[m
+Author: hdddhdd <nuly08@naver.com>
+Date:   Thu Sep 22 23:35:20 2022 +0900
+
+    django basic setting
+
+[33mcommit a436ac5034a0d41560628acc449fea6f9f9422a1[m
+Author: Heejung Choi <71762328+hdddhdd@users.noreply.github.com>
+Date:   Mon Sep 19 13:48:00 2022 +0900
+
+    Initial commit

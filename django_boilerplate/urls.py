@@ -33,7 +33,7 @@ urlpatterns = [
     path('', include('resume.urls')),
 
     path('accounts/' ,include('allauth.urls')),
-
+    path('job_list/', include('crawled_job.urls')),
 
 ]
 
