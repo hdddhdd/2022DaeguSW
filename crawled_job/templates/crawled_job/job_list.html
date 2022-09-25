@@ -10,11 +10,15 @@
 </head>
 <body>
     <!-- horizontal -->
+    <div style="background-color: white">
+        {% include 'user/navbar.html' %}
+    </div>
     <h1>일자리 공고</h1>
     <h2>추천 일자리</h2>
     {% for boarddata in boarddata.all %}
     <div class="flip">
-        <div class="front" style="background-image: url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
+
+        <div class="front" style="background-image: url('../../static/crawled_job/01.jpg')">
            <h3 class="text-shadow"> {{boarddata.company}}</h3>
            <h2>{{boarddata.title}}</h2>
         </div>
@@ -30,7 +34,7 @@
     <br>
 
     <!-- vertical -->
-    
+<!--     
     <h2>일자리 전체</h2>
     <div class="flip flip-vertical">
         <div class="front" style="background-image: url(https://images.pexels.com/photos/38136/pexels-photo-38136.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
@@ -58,6 +62,6 @@
            <h2>Angular</h2>
            <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
         </div>
-    </div>
+    </div> -->
 </body>
 </html>

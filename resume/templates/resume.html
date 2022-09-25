@@ -8,15 +8,17 @@
     <meta name="author" content="" />
     <title>이력서 가이드라인</title>
 
-    <!-- Font Awesome icons (free version)-->
+
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <script src='http://code.jquery.com/jquery-3.3.1.js'></script>
-    <link href="../../static/style.css" rel="stylesheet" />
+    <link href="../../static/newstyle.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
     <style>
         #container {
             display: flex;
@@ -24,11 +26,11 @@
 
         #box-left {
             flex-basis: 700px;
-            background: linear-gradient(rgb(255, 242, 179), white);
+            /* background: linear-gradient(rgb(255, 242, 179), white); */
             /* background-color: #ffaa00; */
-            padding: 100px;
+            /* padding: 100px;
             border-top: 200px;
-            margin-right: 100px;
+            margin-right: 100px; */
         }
 
         #box-center {
@@ -36,7 +38,6 @@
             text-align: center;
             /* background-color: #ffaa00; */
         }
-
     </style>
     <script>
         function setThumbnail(event) {
@@ -64,10 +65,13 @@
 
         <div id='container'>
             <div id='box-left'>
-                <br><br>
-                <h3>이력서 작성 Tip 추가하기</h3>
+                <img style="height: 500px; margin-top: 250px;" src="" alt="예이">
+                <h1>hhhhhh</h1>
+                <img style="height: 500px; margin-top: 250px;" src="../../resume/static/resumetips.png" alt="예이">
 
             </div>
+
+
             <div id='box-center'>
                 <!--이력서 폼-->
                 <div class="signupform" style="margin-right: 100px;">
@@ -77,7 +81,7 @@
 
                         <label for="user_img">프로필 이미지</label> <br>
                         <input type="file" id="user_img" name="프로필 이미지" onchange="setThumbnail(event);">
-                        
+
                         <div id="image_container"></div><br>
                         {% csrf_token %}
 
@@ -137,7 +141,7 @@
 
                 </div>
             </div>
-          
+
         </div>
         {% endblock %}
 
