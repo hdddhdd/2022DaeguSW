@@ -39,9 +39,5 @@ urlpatterns = [
 
 
 #미디어파일을 위한 url저장하기
-urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
-
-
-urlpatterns == [path('summernote/', include('django_summernote.urls'))]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
