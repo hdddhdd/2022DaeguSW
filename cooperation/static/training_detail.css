@@ -1,0 +1,29 @@
+/* #container {
+  display: flex;
+}
+
+#box-left {
+  background: red;
+  flex: 1;
+}
+
+#box-right {
+  background-color: yellow;
+  flex-basis: 150px;
+  text-align: center;
+} */
+#box-left {
+  background: red;
+  flex-basis: 100px;
+}
+#box-center {
+  background: orange;
+  flex: 1;
+  text-align: center;
+}
+#box-right {
+  background: yellow;
+  flex-basis: 150px;
+  text-align: right;
+}
+

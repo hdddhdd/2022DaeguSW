@@ -1,6 +1,13 @@
 // 산학 연계 직업 훈련 페이지 - 기관 목록
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900);
 
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @white: #ffffff;
 @lightBG: #dce1df;
 @salmon: #ff6666;
@@ -14,9 +21,9 @@
 
 
 body {
-    // background: #dce1df;
+    background: #dce1df;
     color: #4f585e;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Cafe24Ssurround', sans-serif;
     text-rendering: optimizeLegibility;
 }
 
@@ -195,8 +202,9 @@ div.card.show {
     transform: scale(1) !important;
 
     div.card-title {
+        padding-top: 100px;
         a.toggle-info {
-            background: #ff6666 !important;
+            background: #ffaa00!important;
 
             span {
                 top: 15px;
