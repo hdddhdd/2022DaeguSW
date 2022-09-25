@@ -63,6 +63,12 @@ def login_view(request):
 
         # return render(request,'login.html',res_data) #응답 데이터 res_data 전달
 
+
+def experience(request):
+    return render(request, 'experience.html')
+
+
+
 def main(request):
     return render(request, 'main.html')
 

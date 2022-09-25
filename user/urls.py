@@ -1,7 +1,7 @@
 
 from xml.etree.ElementInclude import include
 from django.urls import path
-from .views import signup,result, login_view,logout_view,home, main, help, accounts
+from .views import signup,result, login_view,logout_view,home, main, help, accounts,experience
 
 urlpatterns = [
     path('signup/', signup, name='signup'),
@@ -13,4 +13,5 @@ urlpatterns = [
     path('', main, name='main'),
     path('help/', help, name='help'),
     path('yey/', accounts, name='accounts'),
+    path('experience/',experience, name='experience'),
 ]

@@ -20,22 +20,31 @@
 <body>
     <!-- Navigation-->
     {% include 'user/navbar.html' %}
-    {% block main_area %}
-    <div style="align-items: center; margin-top: 150px;">
 
-        <h1>이력서 수정하기</h1>
-        <hr />
 
-        <form method="post" enctype="multipart/form-data" >{% csrf_token %}
-            <table>
-                {{ form }}
-            </table>
+    <div style="background-color:  #FAF7F2; padding-top: 80px;">
+        <!--이력서 폼-->
 
-            <button type="submit" class="btn btn-dark float-right">Submit</button>
-        </form>
+        {% block main_area %}
+
+        <div style="margin-top: 130px;">
+
+            <h1 style="text-align: center;">이력서 수정하기</h1><br>
+
+            <form method="post" enctype="multipart/form-data" style="margin-left: 500px; padding-bottom: 40px;">{%csrf_token %}
+                <table>
+                    {{ form }}
+                </table>
+                <br>
+                <button type="submit" class="btn btn-dark" style="margin-left:400px">Submit</button>
+            </form>
+              
+        </div>
+
     </div>
     {% endblock %}
-
+   <!-- Footer-->
+   {% include 'user/footer.html' %}   
 </body>
 
 </html>

@@ -6,15 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{% sass_src 'crawled_job/job_list.scss' %}" rel="stylesheet" type="text/css" />    
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <script src='http://code.jquery.com/jquery-3.3.1.js'></script>
+    <link href="../../static/newstyle.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
     <title>job_list</title>
 </head>
 <body>
+<div style="padding: 130px;">
     <!-- horizontal -->
-    <div style="background-color: white">
+    <div style="background-color: white ;margin-top: 150px;" >
         {% include 'user/navbar.html' %}
     </div>
-    <h1>일자리 공고</h1>
-    <h2>추천 일자리</h2>
+    <h1 style="font-family: yg-jalnan;">일자리 공고</h1>
+    <h2 style="font-family: NanumBarunGothic;">추천 일자리</h2>
     {% for boarddata in boarddata.all %}
     <div class="flip">
 
@@ -63,5 +73,13 @@
            <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
         </div>
     </div> -->
+    </div>
+      <!-- Footer-->
+   {% include 'user/footer.html' %}
+   <!-- Bootstrap core JS-->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- Core theme JS-->
+   <script src="js/scripts.js"></script>
+  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>   
 </body>
 </html>
