@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>나의 이력서</title>
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
@@ -15,22 +15,183 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+
+    <style>
+        html {
+            background: #FAF7F2;
+            background-image: url(https://s3.postimg.org/s1n3ji1ur/paper_fibers_2_X.png);
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .u-clearfix:before,
+        .u-clearfix:after {
+            content: " ";
+            display: table;
+        }
+
+        .u-clearfix:after {
+            clear: both;
+        }
+
+        .u-clearfix {
+            *zoom: 1;
+        }
+
+        .subtle {
+            color: #aaa;
+        }
+
+        .middletitle {
+            font-size: 30px;
+        }
+
+        .card-container {
+            margin: 25px auto 0;
+            position: relative;
+            width: 692px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 0 5px rgba(75, 75, 75, .07);
+            z-index: 1;
+        }
+
+        .card-body {
+            display: inline-block;
+            float: left;
+            width: 310px;
+        }
+
+        .card-number {
+            margin-top: 15px;
+        }
+
+        .card-circle {
+            border: 1px solid #aaa;
+            border-radius: 50%;
+            display: inline-block;
+            line-height: 22px;
+            font-size: 12px;
+            height: 25px;
+            text-align: center;
+            width: 25px;
+        }
+
+        .card-author {
+            display: block;
+            font-size: 12px;
+            letter-spacing: .5px;
+            margin: 15px 0 0;
+            text-transform: uppercase;
+        }
+
+        .card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60px;
+            font-weight: 300;
+            line-height: 60px;
+            margin: 10px 0;
+        }
+
+        .card-description {
+            display: inline-block;
+            font-weight: 300;
+            line-height: 22px;
+            margin: 10px 0;
+        }
+
+        .card-read {
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin: 5px 0 20px;
+            position: relative;
+            text-align: right;
+            text-transform: uppercase;
+        }
+
+        .card-read:after {
+            background-color: #b8bddd;
+            content: "";
+            display: block;
+            height: 1px;
+            position: absolute;
+            top: 9px;
+            width: 75%;
+        }
+
+        .card-tag {
+            float: right;
+            margin: 5px 0 0;
+        }
+
+        .card-media {
+            float: right;
+        }
+
+        .card-shadow {
+            background-color: #fff;
+            box-shadow: 0 2px 25px 2px rgba(0, 0, 0, 1), 0 2px 50px 2px rgba(0, 0, 0, 1), 0 0 100px 3px rgba(0, 0, 0, .25);
+            height: 1px;
+            margin: -1px auto 0;
+            width: 80%;
+            z-index: -1;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Navigation-->
     {% include 'user/navbar.html' %}
-    <div style="margin-top: 200px;">
-        {% for resume in resumes %}
-        <h1>{{resume.user_name}}</h1>
-        <img src="{{resume.user_img.url}}">
-        <p>{{resume.user_phonenum}}</p>
-        <p>{{resume.user_gender}}</p>
-        <p>{{resume.user_address}}</p>
-        <p>{{resume.user_disability}}</p>
-        <p>{{user_career}}</p>
+
+
+    {% for resume in resumes %}
+    <div style="background-color: #FAF7F1;">
+
+        <div class="card-container" style="margin-top:250px; padding-bottom: 100px; ">
+            <a class="btn btn-dark btn-sm float-right" href="/myresume/update/{{ resume.pk }}" style="margin-bottom: 10px;" role="button">
+                <i class="fas fa-pen"></i> &nbsp 이력서 수정하기
+            </a> 
+
+            <div class="card u-clearfix" style="align-items: center;">
+                <img src="{{resume.user_img.url}}">
+
+                <div class="card-body" style="padding: 10px;">
+                    <span class="card-number card-circle subtle">01</span>
+
+
+
+                    <h2 class="card-title">{{resume.user_name}}</h2>
+                    <span class="card-description middletitle">전화번호</span><br>
+                    <span class="card-description subtle">{{resume.user_phonenum}}</span><br>
+                    <span class="card-description subtle">성별 </span><br>
+                    <span class="card-description subtle">{{resume.user_gender}}</span><br>
+                    <span class="card-description subtle">주소</span><br>
+                    <span class="card-description subtle">{{resume.user_address}}</span><br>
+                    <span class="card-description subtle">경험 및 경력 </span><br>
+                    <span class="card-description subtle">{{resume.user_career}}</span>
+                    <div class="card-read"> resume</div>
+                    <span class="card-tag card-circle subtle">C</span>
+                </div>
+            </div>
+            <div class="card-shadow"></div>
+        </div>
+
+        {% endfor %}
     </div>
-    {% endfor %}
 </body>
 
 </html>

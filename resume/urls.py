@@ -13,7 +13,8 @@ urlpatterns = [
 
     # 이력서 생성 및 수정
     path('create/', ResumeCreate.as_view()), # 이력서 생성
-    path('myresume/update/<int:pk>', ResumeUpdate.as_view()), # 이력서 수정
+    path('myresume/update/<int:pk>/', ResumeUpdate.as_view()), # 이력서 수정
+    path('myresume/update/2/2/', myresume), # 이력서 수정
 
 ]
 

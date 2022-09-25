@@ -43,7 +43,7 @@ def resume(request):
         )
         #resume.save()
 
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/myresume')
 
     return render(request, 'main.html')
 
@@ -76,7 +76,7 @@ class ResumeCreate(LoginRequiredMixin, CreateView):
             form.instance.author = current_user
             return super(ResumeCreate, self).form_valid(form)
         else:
-            return redirect('/resume/')
+            return redirect('/resume/',form)
 
 
 
@@ -92,7 +92,6 @@ class ResumeUpdate(LoginRequiredMixin, UpdateView):
             return super(ResumeUpdate, self).dispatch(request, *args, **kwargs)
         else:
             raise PermissionDenied
-
-
+   
 
 
