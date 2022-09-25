@@ -38,7 +38,7 @@
 
 
 #### 2. 장애인 일자리 특정 업종 쏠림 현상
- 장애인을 다수 채용하는 ‘장애인 표준사업장’(상시근로자 중 30% 이상)만 봐도 쏠림 현상이 심한 상태입니다. 
+장애인을 다수 채용하는 '장애인 표준사업장'(상시근로자 중 30% 이상)만 봐도 쏠림 현상이 심한 상태입니다.
 
 
 #### 3. 장애인 직업훈련 정보 및 기관 부족
@@ -119,9 +119,14 @@
 
 ## 시연 영상
 [시연 영상]
+https://youtu.be/ho4Iuk-Xpk0
+
+
+## 피그마 캡쳐본
+![image](https://user-images.githubusercontent.com/63399645/192135808-341c6d34-962b-40df-9179-7a8bfed5b74e.png)
+
 
 
 
 [참고 뉴스]: https://news.zum.com/articles/78339666
 [일자리 크롤링 대상 사이트]: https://www.worktogether.or.kr/empInfo/empInfoSrch/list/dtlEmpMainList.do
-[시연영상]: 
