@@ -69,17 +69,20 @@ div.cards {
 div.card {
     background: #ffffff;
     display: inline-block;
-    margin: 8px;
-    max-width: 300px;
+	
+	margin: 0 20px;
+	padding: 25px;
+
+    max-width: 450px;
     perspective: 1000;
     position: relative;
     text-align: left;
     transition: all 0.3s 0s ease-in;
-    width: 300px;
+    width: 450px;
     z-index: 1;
 
     img {
-        max-width: 500px;
+        max-width: 400px;
     }
 
     .card__image-holder {

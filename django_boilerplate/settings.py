@@ -1,7 +1,7 @@
 import os
 
 #summernote 설정
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+# X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -44,7 +44,6 @@ INSTALLED_APPS = [
 
    
 ]
-INSTALLED_APPS += ['django_summernote']
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
