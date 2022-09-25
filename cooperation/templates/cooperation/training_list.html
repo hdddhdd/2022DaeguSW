@@ -13,19 +13,19 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="background-color: rgba(255,170,0,0.8);">
     {% include 'user/navbar.html' %}
 
-    <div style="margin-top:150px; padding: 30px; height:150px;background-color: #fff2d7; ">
-        <div style="text-align: center; vertical-align: middle;">
+    <div style="margin-top:150px; padding: 30px; height:150px; ">
+        <div style="text-align: center;">
             <h1 class="card-title"> 💕{{ companyName }}💕의 교육훈련 프로그램입니다.</h1>
         </div>
 
 
         {% for p in training_list %}
 
-        <ul class="cards" style="margin-top: 150px;display: inline-flex;">
-            <div class="card">
+        <ul class="cards" style="margin-top: 70px;display: inline-flex;">
+            <div class="card" style="box-shadow: 7px 7px 20px grey;">
                 {% if p.trainingImage %}
                 <img class="card__image" width="400px" height="250px" src="{{ p.trainingImage.url }}" alt="{{ p }} head image">
                 {% else %}
