@@ -11,7 +11,7 @@
 특별세션 - 장애인 사회 진출 꺼림  
 
 ## 프로젝트 한 줄 설명
-기업과 장애인을 연결하는 산학연계훈련 및 구인구직 통합 서비스입니다.
+기업과 장애인을 연결하는 훈련 및 구인구직 통합 서비스입니다.
 
 ## 서비스 로고
 ![image](https://user-images.githubusercontent.com/63399645/192135543-fa426d26-a04e-40a1-8b06-369655976afe.png)
@@ -51,7 +51,7 @@
 > ❗산학연계훈련❗
 > - 기업의 직무수요에 따라 직업능력개발원과 기업이 훈련 내용, 훈련 수준, 훈련 방법 등에 대하여 사전 협의하고, > 희망자를 별도로 모집하여 선발한 후 약정에 따라 실시하는 훈련
 > - 이수 훈련생은 사업체가 우선 채용
-![산학연계훈련 설명](이미지 URL)
+![산학연계훈련 설명]
 
 ---
 ### 해결방안
@@ -130,3 +130,4 @@ https://youtu.be/ho4Iuk-Xpk0
 
 [참고 뉴스]: https://news.zum.com/articles/78339666
 [일자리 크롤링 대상 사이트]: https://www.worktogether.or.kr/empInfo/empInfoSrch/list/dtlEmpMainList.do
+[피그마 링크]: https://www.figma.com/file/T2W9VVcMq6liShMqwNrZRC/2022DaeguSW?node-id=0%3A1
