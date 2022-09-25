@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>훈련 컨텐츠 세부페이지</title>
     <!-- CSS -->
-    <link href="../../static/company_list.css" rel="stylesheet"/>
+    <link href="../../static/company_list.css" rel="stylesheet">
     <link href="../../static/styles.css" rel="stylesheet" />
 
     <script src="../../static/styles.js"></script>
@@ -15,6 +15,7 @@
 
 <body style="background-color: #ffffff;">
     {% include 'user/navbar.html' %}
+
     <div style="margin-top:150px; margin: 100px; text-align: center;">
         <hr />
         <!--
@@ -30,7 +31,7 @@
         <img class="img-fluid rounded" src="{{ training.trainingImage.url }}" width="40%"
             alt="{{ post.trainingTitle }} trainingImage">
         {% else %}
-        <img class="img-fluid rounded"width="30%" src="https://picsum.photos/seed/{{ post.id }}/800/200" alt="random_image">
+        <img class="img-fluid rounded"width="10px" src="https://picsum.photos/seed/{{ post.id }}/800/200" alt="random_image">
         {% endif %}
         <br>
         <hr>
